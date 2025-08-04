@@ -9,14 +9,23 @@ const AppContent: React.FC = () => {
   const { setPosts, setUsers } = useContext(DataContext);
 
   const fetchPosts = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const data: Post[] = await response.json();
-    setPosts(data.slice(0, 5));
+    try {
+      const response = await fetch("https://dummyjson.com/products");
+      const json = await response.json();
+      const products: Post[] = json.products; // ✅ Fix: access products array
+      setPosts(products.slice(0, 30));
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+    }
   };
 
   const fetchUsers = async () => {
-    const response = await axios.get<User[]>("https://jsonplaceholder.typicode.com/users");
-    setUsers(response.data.slice(0, 5));
+    try {
+      const response = await axios.get<User[]>("https://jsonplaceholder.typicode.com/users");
+      setUsers(response.data.slice(0, 5));
+    } catch (error) {
+      console.error("Error fetching users:", error);
+    }
   };
 
   useEffect(() => {
