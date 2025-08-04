@@ -21,7 +21,7 @@ export default function PostsList({ searchQuery, posts, onEndReached, loading }:
   const colorScheme = useColorScheme();
   const isDark = colorScheme === "dark";
   const theme = {
-    background: isDark ? "#3a1c32" : "#ffe4ec",
+    background: "#add8e6",
     card: isDark ? "#5e2750" : "#fff0f6",
     text: isDark ? "#ffe4ec" : "#d72660",
     border: "#f7a1c4",
@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 10,
     paddingTop: 20,
+    backgroundColor: "#add8e6",
   },
   header: {
     fontSize: 24,
@@ -130,7 +131,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    aspectRatio: 4 / 3,
+    height: 90,
     borderRadius: 10,
     marginBottom: 8,
     resizeMode: "cover",
