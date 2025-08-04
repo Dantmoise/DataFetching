@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
 const ProductDetailScreen = () => {
   const params = useLocalSearchParams();
   const router = useRouter();
-  // All product fields are passed as params
+
   const product = params;
   return (
     <ScrollView contentContainerStyle={styles.container}>
